@@ -1,0 +1,32 @@
+-Items
+  []Add
+  []Delete
+  []Edit
+  []Sort
+  []Search
+-Qty Errors
+  []Check within range
+  []Sort
+  []Search
+-Department Spending
+  []View table
+  []Select Departments
+  []Monthly Report
+-Qty Changes
+  []Add log
+  []View log
+  []Delete log
+  []Sort log
+-Price Changes
+  []Add log
+  []View log
+  []Edit Prices
+  []Delete log
+-Changelog
+  []View Change Log
+-Instructions
+  []View Instructions
+-Options
+  []Display
+  []Default Month
+  []Copy Prices

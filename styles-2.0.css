@@ -1,0 +1,66 @@
+table {
+  font-family: arial, sans-serif;
+  border: 2px solid #000000;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+div.scroll {
+      height:500px;
+      width:100%;
+      overflow-y:scroll;
+    }
+
+div.priceTable{
+  width:100%;
+  overflow-x:scroll;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    }
+
+table.mainTable{
+  font-size:25px;
+  width:100%;
+}
+
+table.mainTable2{
+  font-size:25px;
+  width:150%;
+}
+
+th{
+  border: 2px solid #000000;
+}
+
+td{
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+input[type=text] {
+  width:120px;
+}
+
+
+.lightBorder{
+  border-right: 1px solid #000000;
+}
+
+textarea{
+  overflow:hidden;
+}
+
+
+label {
+  display: inline-block;
+  width: 90px;
+}
