@@ -91,7 +91,7 @@ DESCIRPTION:
     <div id="itemDiv"></div><br>
     <div id="edit"></div><br>
 
-<h6> <div id='versionTag'>Version: 2.0</div>
+<h6> <div id='versionTag'>Version: 1.1</div>
 
 </div> </h6>
 
