@@ -39,7 +39,7 @@ DESCIRPTION:
 
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/qtyChanges-3.4.js"></script>
-  <script src="./js/loadTable-4.3.js"></script>
+  <script src="./js/loadTable-4.4.js"></script>
   <script src="./js/addItem-1.8.js"></script>
   <script src="./js/editItem-3.8.js"></script>
   <script src="./js/priceChanges-2.2.js"></script>
@@ -77,7 +77,6 @@ DESCIRPTION:
     <div id="table" class="scroll"> <script> changeTable(); </script></div><br>
 
     <form style="display: inline;" action="changelog.php">
-      <button type="button" id="select" onclick="selectItem();">Select</button>
       <button type="button" onclick="addItem();">Add Item</button>
       <button type="submit" name="button">ChangeLog</button>
     </form>

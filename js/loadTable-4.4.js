@@ -98,8 +98,10 @@ function highlight(trId){
   var color;
 
     for (var i = 0; i < radio.length - 1; i++) {
-      if (radio[i].checked || radio[i].value === trId)
+      if (radio[i].checked || radio[i].value === trId){
         color= "#FFFF00";
+        selectItem();
+      }
       else if(i%2 === 0)
         color="#ffffff";
 
