@@ -69,9 +69,15 @@ function addItem(){
   $costcenter = $item['costcenter'];
 
 
-  $sql = "INSERT INTO items (description1, description2, category, rmNum, vendorId, vendorName, um, qty, min, max, costcenter)
-  VALUES ('$description1', '$description2', '$category', '$rmNum', '$vendorId', '$vendorName', '$um', '$qty', '$min', '$max', '$costcenter')";
-  load($sql);
-  echo("Item added successfully.");
+  $items = load("SELECT * FROM `items` WHERE `rmNum` = '$rmNum'");
+
+  if ($items->rowCount() == 0){
+    $sql = "INSERT INTO items (description1, description2, category, rmNum, vendorId, vendorName, um, qty, min, max, costcenter)
+    VALUES ('$description1', '$description2', '$category', '$rmNum', '$vendorId', '$vendorName', '$um', '$qty', '$min', '$max', '$costcenter')";
+    load($sql);
+    echo("Item added successfully.");
+  }
+  else
+    echo("This RM number already exsists.  The item has not been added");
 }
 ?>
