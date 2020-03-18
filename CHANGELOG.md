@@ -1,6 +1,6 @@
 #CHANGELOG
 =========
-##Version 1.1
+Version 1.1
 ------------
 *Added ChangeLog
 *Removed select button - You can now select and edit items by just checking their bubble
