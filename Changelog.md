@@ -3,6 +3,7 @@ CHANGE LOG
 Version 1.5 (Current)
   * Bulk Add Update: Add multiple items to the Database with the "Bulk Add" table
   * You can now add the Standard/List prices when adding items
+  * Adding a new item now takes place inside the AS400 Table
 
 Version 1.1
   * Added Change Log
