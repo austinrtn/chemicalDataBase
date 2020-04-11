@@ -40,6 +40,7 @@ td{
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
   border-right: 2px solid #000000;
+
 }
 
 tr:nth-child(even) {
@@ -48,6 +49,12 @@ tr:nth-child(even) {
 
 input[type=text] {
   width:120px;
+}
+
+div.bulkAdd{
+  text-align:center;
+  margin: auto;
+  padding: 5px
 }
 
 

@@ -68,7 +68,7 @@ class  departmentObj{
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../styles-2.0.css">
+    <link rel="stylesheet" href="../styles-2.1.css">
     <title></title>
   </head>
   <body>

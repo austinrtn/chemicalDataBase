@@ -57,7 +57,7 @@ function printDisplayOptions(){
     if(options[keys[i]]) document.getElementById(keys[i]).checked = true;
 }
 
-// Submites changes to column display
+// Submits changes to column display
 function editDisplay(showAll){
   let newDisplay = {};
   let boxes = document.getElementsByName("displayBox");

@@ -6,7 +6,7 @@ $numOfMonths = 13;
 $colsBeforePrices = sizeof($display)+1;
 $selMonth = getSelMonth();
 
-echo("<table class='mainTable'>");
+echo("<table id='mainTable' class='mainTable'>");
 echo("<th>Edit</th>");
 
 foreach($colTitles as $tc){
@@ -30,10 +30,8 @@ foreach($colTitles as $tc){
     $items = load("SELECT * FROM `items` WHERE qty < min  OR qty > max ORDER BY $sort $ascDesc;");
   }
 
-
   $list = $selMonth['month'] . "List";
   $std = $selMonth['month'] . "Std";
-
 
  foreach($items as $item){
    echo("<tr id= ".$item['id'] . " onclick='highlight(".$item['id'].");'>");
@@ -74,9 +72,9 @@ foreach($colTitles as $tc){
       echo("<td align='center' class='lightBorder'>" .$item[$list]. "</td>
       <td align='center'>" .$item[$std]. "</td>");
     }
-    echo("</tr>");
   }
 }
+echo("</tr></table>");
 
 
 //////////////////////////////////////////////////////////////////

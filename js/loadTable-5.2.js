@@ -1,4 +1,5 @@
 var tableUrl = 'php/loadTable.php';
+var buttonScheme = "default";
 var action = 'main';
 var orderSort = "ASC";
 var search = null;
@@ -7,8 +8,10 @@ var search = null;
 or when an item is searched for.  In each scenerio, the data is recieived via PHP and Ajax, and the data
 is sent to the 'table' Div */
 function changeTable(select){
-    if(select == undefined)
-      select = $("#tableSelect").val();
+  buttonScheme = "default";
+
+  if(select == undefined)
+    select = $("#tableSelect").val();
 
   switch(select){
     case "main":
@@ -17,25 +20,36 @@ function changeTable(select){
       tableUrl='php/loadTable.php';
       action = 'main';
       break;
+
+    case "bulkAddItems":
+      buttonScheme = "bulkAdd";
+      action = "load";
+      tableUrl = "php/bulkTable.php";
+      break;
+
     case "qtyErrors":
       tableUrl='php/loadTable.php';
-        itemsSortChange();
+      itemsSortChange();
       action = 'qtyErrors';
       break;
+
     case "department":
       tableUrl = "php/department.php";
       action = "main";
       break;
+
     case "costs":
       if(tableUrl !== 'php/qtyChanges.php')
         qtySortChange();
       tableUrl='php/qtyChanges.php';
       action = 'table';
       break;
+
     case "priceChanges":
       tableUrl="php/loadPriceTable.php";
       action = 'priceTable';
       break;
+
     case "search":
       tableUrl='php/loadTable.php';
       action = 'main';
@@ -62,12 +76,18 @@ function loadTable(resetTbl2){
     success: function (data) {
       clearDivs(resetTbl2);
       document.getElementById('table').innerHTML = data;
+
+      if(tableUrl == "php/bulkTable.php") loadBulkTable();
+
     }
   });
   search = null;
 }
 
 function clearDivs(resetTbl2){
+  $("#buttons").html(buttonSchemes[buttonScheme]);
+
+
   $("#edit").html("");
   $("#itemDiv").html("");
   $("#priceGraph").html("");
@@ -97,7 +117,7 @@ function highlight(trId){
 
   var color;
 
-    for (var i = 0; i < radio.length - 1; i++) {
+    for (var i = 0; i < radio.length; i++) {
       if (radio[i].checked || radio[i].value === trId){
         color= "#FFFF00";
         selectItem();
@@ -124,4 +144,11 @@ function itemsSortChange(){
   <option value='vendorName'>Vendor Name</option>
   <option value='um'>U/M</option>
   <option value='costcenter'>Cost Center</option>`);
+}
+
+var buttonSchemes = {
+  default: "<form style='display: inline;' target='_blank' action='https://github.com/austinrtn/chemicalDatabase/blob/master/CHANGE_LOG.md'> <button type='button' onclick='addItem();'>Add Item</button> <button type='submit' name='button'>ChangeLog</button></form> <form style='display: inline;' action='instructions.html' method='post'>"+
+    "<button type='submit' name='button'>Instructions</button> <select id='optionsMenu' onchange='selectOption();'> <option disabled selected hidden>Options</option> <option value='Display'>Display</option> <option value='DefaultMonth'>Default Month</option><option value='copyPrices'>Copy Prices</option><option value='feedback'>Feedback</option></select> </select> </form>",
+  addItem: "<button type='button' onclick='submitItem();'>Submit Item</button> <button type=button onClick=changeTable('main');>Cancel</button>",
+  bulkAdd: "<button onclick='submitBulkData();'>Add All Items</button>"
 }

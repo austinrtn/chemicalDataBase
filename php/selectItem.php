@@ -54,6 +54,8 @@ function deleteItem(){
 }
 
 function addItem(){
+  global $months;
+
   $item = $_POST['item'];
 
   $description1 = $item['description1'];
@@ -67,6 +69,8 @@ function addItem(){
   $min = $item['min'];
   $max = $item['max'];
   $costcenter = $item['costcenter'];
+  $list = $item['list'];
+  $std = $item['std'];
 
 
   $items = load("SELECT * FROM `items` WHERE `rmNum` = '$rmNum'");
@@ -76,6 +80,16 @@ function addItem(){
     VALUES ('$description1', '$description2', '$category', '$rmNum', '$vendorId', '$vendorName', '$um', '$qty', '$min', '$max', '$costcenter')";
     load($sql);
     echo("Item added successfully.");
+
+    $stmt = "UPDATE items SET ";
+
+    foreach($months as $month){
+      $stmt .= $month . "List = " . $list . ", ";
+      $stmt .= $month . "Std = " . $std;
+      if($month != "dec") $stmt .= ", ";
+    }
+    $stmt .= " WHERE rmNum = '$rmNum'";
+    load($stmt);
   }
   else
     echo("This RM number already exsists.  The item has not been added");

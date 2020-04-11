@@ -29,20 +29,22 @@ DESCIRPTION:
 </script>
 
 <head>
+  <link rel="stylesheet" href="./styles-2.1.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="./js/options-2.3.js"></script>
 
   <title>Database</title>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="./styles-2.0.css">
 
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/qtyChanges-3.4.js"></script>
-  <script src="./js/loadTable-4.4.js"></script>
-  <script src="./js/addItem-1.8.js"></script>
+  <script src="./js/addItem-2.7.js"></script>
   <script src="./js/editItem-3.8.js"></script>
   <script src="./js/priceChanges-2.2.js"></script>
+  <script src="./js/loadTable-5.2.js"></script>
+
 </head>
 
 <body>
@@ -63,6 +65,7 @@ DESCIRPTION:
       </select>
     <select align='center' id='tableSelect' onChange='changeTable();'>
       <option value='main'>AS 400</option>
+      <option value='bulkAddItems'>Bulk Add Items</option>
       <option value="qtyErrors">QTY Errors</option>
       <option value="department">Department Spending</option>
       <option value='costs'>Orders and Issues</option>
@@ -75,18 +78,9 @@ DESCIRPTION:
     <br><br>
 
     <div id="table" class="scroll"> <script> changeTable(); </script></div><br>
+    <div id='buttons'>
 
-    <form style="display: inline;" action="changelog.php">
-      <button type="button" onclick="addItem();">Add Item</button>
-      <button type="submit" name="button">ChangeLog</button>
-    </form>
-
-    <form style="display: inline;" action="instructions.html" method="post">
-      <button type="submit" name="button">Instructions</button>
-      <select id='optionsMenu' onchange="selectOption();">
-        <option disabled selected hidden>Options</option> <option value="Display">Display</option> <option value="DefaultMonth">Default Month</option><option value="copyPrices">Copy Prices</option><option value="feedback">Feedback</option></select>
-      </select>
-    </form>
+    </div>
 
     <div id="itemDiv"></div><br>
     <div id="edit"></div><br>
